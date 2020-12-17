@@ -34,3 +34,17 @@ def player(board):
     else:
         return O
 
+def actions(board):
+    """
+    Returns set of all possible actions (i, j) available on the board.
+    """
+    possible_actions = set()
+
+    for i, row in enumerate(board):
+        for j, cell in enumerate(row):
+            if cell == EMPTY:
+                possible_actions.add((i, j))
+
+    return possible_actions
+
+   

@@ -47,4 +47,14 @@ def actions(board):
 
     return possible_actions
 
-   
+    def result(board, action):
+    """
+    Returns the board that results from making move (i, j) on the board.
+    """
+    if action not in actions(board):
+        raise ValueError
+
+    new_board = copy.deepcopy(board)
+    new_board[action[0]][action[1]] = player(new_board)
+
+    return new_board

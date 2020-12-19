@@ -58,3 +58,42 @@ def actions(board):
     new_board[action[0]][action[1]] = player(new_board)
 
     return new_board
+
+    def winner(board):
+    """
+    Returns the winner of the game, if there is one.
+    """
+    wins = [[(0, 0), (0, 1), (0, 2)],
+            [(1, 0), (1, 1), (1, 2)],
+            [(2, 0), (2, 1), (2, 2)],
+            [(0, 0), (1, 0), (2, 0)],
+            [(0, 1), (1, 1), (2, 1)],
+            [(0, 2), (1, 2), (2, 2)],
+            [(0, 0), (1, 1), (2, 2)],
+            [(0, 2), (1, 1), (2, 0)]]
+
+    for combination in wins:
+        checks_x = 0
+        checks_o = 0
+        for i, j in combination:
+            if board[i][j] == X:
+                checks_x += 1
+            if board[i][j] == O:
+                checks_o += 1
+        if checks_x == 3:
+            return X
+        if checks_o == 3:
+            return O
+
+    return None
+
+
+def terminal(board):
+    """
+    Returns True if game is over, False otherwise.
+    """
+    if winner(board) is not None or not actions(board):
+        return True
+    else:
+        return False
+

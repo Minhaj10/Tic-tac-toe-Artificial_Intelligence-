@@ -97,3 +97,45 @@ def terminal(board):
     else:
         return False
 
+def utility(board):
+    """
+    Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
+    """
+    winner_player = winner(board)
+    if winner_player == X:
+        return 1
+    elif winner_player == O:
+        return -1
+    else:
+        return 0
+
+
+def minimax(board):
+    """
+    Returns the optimal action for the current player on the board.
+    """
+    if terminal(board):
+        return None
+
+    # Optimization by hardcoding the first move
+    if board == initial_state():
+        return 0, 1
+
+    current_player = player(board)
+    best_value = float("-inf") if current_player == X else float("inf")
+
+    for action in actions(board):
+        new_value = minimax_value(result(board, action), best_value)
+
+        if current_player == X:
+            new_value = max(best_value, new_value)
+
+        if current_player == O:
+            new_value = min(best_value, new_value)
+
+        if new_value != best_value:
+            best_value = new_value
+            best_action = action
+
+    return best_action
+

@@ -139,3 +139,29 @@ def minimax(board):
 
     return best_action
 
+def minimax_value(board, best_value):
+    """
+    Returns the best value for each recursive minimax iteration.
+    Optimized using Alpha-Beta Pruning: If the new value found is better
+    than the best value then return without checking the others.
+    """
+    if terminal(board):
+        return utility(board)
+
+    current_player = player(board)
+    value = float("-inf") if current_player == X else float("inf")
+
+    for action in actions(board):
+        new_value = minimax_value(result(board, action), value)
+
+        if current_player == X:
+            if new_value > best_value:
+                return new_value
+            value = max(value, new_value)
+
+        if current_player == O:
+            if new_value < best_value:
+                return new_value
+            value = min(value, new_value)
+
+    return value

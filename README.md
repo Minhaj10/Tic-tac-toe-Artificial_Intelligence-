@@ -1,3 +1,10 @@
+# Sample UI of Game
+
+![pythone](https://user-images.githubusercontent.com/43043473/149807417-434e39f9-ce9e-4550-960d-a8a6b8718ec3.PNG)
+
+
+# Intoduction
+
 This is a tic-tac-toe game built with AI feature.
 There are two main files in this project: 
 runner.py and tictactoe.py. 
@@ -5,6 +12,8 @@ tictactoe.py contains all of the logic for playing the game, and for making opti
 runner.py has been implemented for you, and contains all of the code to run the graphical interface for the game. 
 Once you’ve completed all the required functions in tictactoe.py, you should be able to run python runner.py to play against your AI!
 
+
+# Code Explanation
 First, we define three variables: X, O, and EMPTY, to represent possible moves of the board.
 
 The function initial_state returns the starting state of the board. 
@@ -45,5 +54,7 @@ The move returned should be the optimal action (i, j) that is one of the allowab
 If the board is a terminal board, the minimax function should return None.
 
 For all functions that accept a board as input, you may assume that it is a valid board (namely, that it is a list that contains three rows, each with three values of either X, O, or EMPTY). You should not modify the function declarations (the order or number of arguments to each function) provided.
+
+# Conclusion
 
 Once all functions are implemented correctly, you should be able to run python runner.py and play against your AI. And, since Tic-Tac-Toe is a tie given optimal play by both sides, you should never be able to beat the AI (though if you don’t play optimally as well, it may beat you!)

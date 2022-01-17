@@ -58,3 +58,7 @@ For all functions that accept a board as input, you may assume that it is a vali
 # Conclusion
 
 Once all functions are implemented correctly, you should be able to run python runner.py and play against your AI. And, since Tic-Tac-Toe is a tie given optimal play by both sides, you should never be able to beat the AI (though if you don’t play optimally as well, it may beat you!)
+
+# How to run this project
+
+run **pip3 install -r requirements.txt** to install the required Python package (pygame) for this project.

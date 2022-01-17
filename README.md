@@ -3,7 +3,7 @@
 ![pythone](https://user-images.githubusercontent.com/43043473/149807417-434e39f9-ce9e-4550-960d-a8a6b8718ec3.PNG)
 
 
-# Intoduction
+# Introduction
 
 This is a tic-tac-toe game built with AI feature.
 There are two main files in this project: 
